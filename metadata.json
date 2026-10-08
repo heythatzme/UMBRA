@@ -1,0 +1,6 @@
+{
+  "name": "UMBRA",
+  "description": "Created by Zayd. Minimalist, premium monochrome photo editor and digital darkroom.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">UMBRA</string>
+    <string name="app_subtitle">SEE THE DARK DIFFERENTLY</string>
+    <string name="import_image">Import Image</string>
+    <string name="open_sample">Sample Photo</string>
+    <string name="undo">Undo</string>
+    <string name="redo">Redo</string>
+    <string name="compare">Compare Before/After</string>
+    <string name="export">Export</string>
+    <string name="reset_all">Reset All</string>
+    <string name="original">Original</string>
+    <string name="edited">Edited</string>
+</resources>

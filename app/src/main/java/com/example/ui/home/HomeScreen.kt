@@ -128,8 +128,11 @@ fun HomeScreen(
 
             Spacer(modifier = Modifier.height(18.dp))
 
-            // The Eclipse Eye Logo
-            EclipseEyeLogo(size = 68.dp)
+            // The Eclipse Eye Logo (Application Logo)
+            EclipseEyeLogo(
+                size = 72.dp,
+                modifier = Modifier.testTag("application_logo")
+            )
 
             Spacer(modifier = Modifier.height(18.dp))
 
@@ -467,7 +470,7 @@ private fun UmbraAboutDialog(onDismiss: () -> Unit) {
                 // Social Media: INSTAGRAM @obscurithmic
                 Button(
                     onClick = {
-                        openUrl(context, "https://www.instagram.com/obscurithmic/")
+                        openInstagram(context, "obscurithmic")
                     },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = NoirSurfaceElevated,
@@ -633,6 +636,18 @@ private fun UmbraAboutDialog(onDismiss: () -> Unit) {
                 }
             }
         }
+    }
+}
+
+private fun openInstagram(context: Context, username: String) {
+    try {
+        val appIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://instagram.com/_u/$username")).apply {
+            setPackage("com.instagram.android")
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+        context.startActivity(appIntent)
+    } catch (_: Exception) {
+        openUrl(context, "https://www.instagram.com/$username/")
     }
 }
 

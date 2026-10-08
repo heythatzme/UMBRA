@@ -75,6 +75,7 @@ import com.example.model.GrainPreset
 import com.example.model.GrainState
 import com.example.model.NoirPresetId
 import com.example.ui.components.CurvesEditorView
+import com.example.ui.components.EclipseEyeLogo
 import com.example.ui.components.NoirSlider
 import com.example.ui.components.ZoomableImageView
 import com.example.ui.export.ExportDialog
@@ -168,7 +169,7 @@ fun EditorScreen(
                 modifier = Modifier.fillMaxSize()
             )
 
-            // Top-left resolution & sensor badge
+            // Top-left resolution & sensor badge with UMBRA logo
             Box(
                 modifier = Modifier
                     .align(Alignment.TopStart)
@@ -177,15 +178,21 @@ fun EditorScreen(
                     .border(1.dp, NoirBorder, RoundedCornerShape(2.dp))
                     .padding(horizontal = 8.dp, vertical = 4.dp)
             ) {
-                Text(
-                    text = "${uiState.resolutionString()} • ${uiState.megapixelsString()} • FULL RES PIPELINE",
-                    style = MaterialTheme.typography.labelSmall.copy(
-                        fontFamily = FontFamily.Monospace,
-                        fontSize = 9.sp,
-                        letterSpacing = 0.5.sp,
-                        color = NoirAccentSilver
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    EclipseEyeLogo(size = 14.dp, modifier = Modifier.testTag("editor_badge_logo"))
+                    Text(
+                        text = "UMBRA • ${uiState.resolutionString()} • ${uiState.megapixelsString()} • FULL RES",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 9.sp,
+                            letterSpacing = 0.5.sp,
+                            color = NoirAccentSilver
+                        )
                     )
-                )
+                }
             }
 
             // Top-right floating controls: 100% Inspection / Fit-to-screen

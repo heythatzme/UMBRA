@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- The Eclipse Eye: Outer Eye Contour (Upper & Lower arcs) -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M22,54 C32,35 43,30 54,30 C65,30 76,35 86,54 C76,73 65,78 54,78 C43,78 32,73 22,54 Z" />
+
+    <!-- The Eclipse Corona / Outer Iris (White circle) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,39 A15,15 0 1,0 54,69 A15,15 0 1,0 54,39" />
+
+    <!-- The Total Eclipse Shadow / Negative Space Pupil -->
+    <path
+        android:fillColor="#080808"
+        android:pathData="M54,46.5 A7.5,7.5 0 1,0 54,61.5 A7.5,7.5 0 1,0 54,46.5" />
+
+    <!-- Center White Catchlight Dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M55.5,48.5 A1.5,1.5 0 1,0 55.5,51.5 A1.5,1.5 0 1,0 55.5,48.5" />
+</vector>

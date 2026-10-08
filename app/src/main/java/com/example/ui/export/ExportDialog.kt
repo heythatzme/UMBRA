@@ -41,6 +41,7 @@ import androidx.compose.ui.window.Dialog
 import com.example.model.ExportFormat
 import com.example.model.ExportSettings
 import com.example.processing.ExportProcessor
+import com.example.ui.components.EclipseEyeLogo
 import com.example.ui.components.NoirSlider
 import com.example.ui.theme.NoirAccentWhite
 import com.example.ui.theme.NoirBorder
@@ -103,21 +104,27 @@ fun ExportDialog(
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Column {
-                        Text(
-                            text = "EXPORT PHOTOGRAPH",
-                            style = MaterialTheme.typography.labelLarge.copy(
-                                letterSpacing = 2.5.sp,
-                                color = NoirTextPrimary
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        EclipseEyeLogo(size = 32.dp, modifier = Modifier.testTag("export_dialog_logo"))
+                        Column {
+                            Text(
+                                text = "UMBRA EXPORT",
+                                style = MaterialTheme.typography.labelLarge.copy(
+                                    letterSpacing = 2.5.sp,
+                                    color = NoirTextPrimary
+                                )
                             )
-                        )
-                        Text(
-                            text = "Full Resolution Pipeline",
-                            style = MaterialTheme.typography.bodySmall.copy(
-                                color = NoirTextTertiary,
-                                fontSize = 11.sp
+                            Text(
+                                text = "Full Resolution Pipeline",
+                                style = MaterialTheme.typography.bodySmall.copy(
+                                    color = NoirTextTertiary,
+                                    fontSize = 11.sp
+                                )
                             )
-                        )
+                        }
                     }
 
                     Box(
